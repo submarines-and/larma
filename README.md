@@ -1,5 +1,5 @@
 #  Larma
-Extremely simple alarm app for mac that lives in the menu bar.
+There is no way I am paying $5 for a timer app, so I wrote my own. It lives in your menu bar and saves you having to go to google each time.
 
 ## Usage
 1) Start app
