@@ -20,5 +20,8 @@ class ViewController: NSViewController {
         return viewcontroller
     }
     
+    @IBAction func onEnter(_ sender: NSTextField) {
+        print(sender.stringValue)
+    }
 }
 
