@@ -8,6 +8,7 @@
 import Cocoa
 
 class ViewController: NSViewController {
+    var timer = TimerService.global
     
     
     static func newInstance() -> ViewController {
@@ -17,11 +18,13 @@ class ViewController: NSViewController {
         guard let viewcontroller = storyboard.instantiateController(withIdentifier: identifier) as? ViewController else {
             fatalError("Unable to instantiate ViewController in Main.storyboard")
         }
+        
         return viewcontroller
     }
     
     @IBAction func onEnter(_ sender: NSTextField) {
-        print(sender.stringValue)
+        let parsed = Double(sender.stringValue) ?? 0;
+        timer.start(duration: parsed)
     }
 }
 
