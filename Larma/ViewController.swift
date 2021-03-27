@@ -9,8 +9,8 @@ import Cocoa
 
 class ViewController: NSViewController {
     var timer = TimerService.global
-    
-    
+    var closeDelegate:PopoverDelegate?
+
     static func newInstance() -> ViewController {
         let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil)
         let identifier = NSStoryboard.SceneIdentifier("ViewController")
@@ -22,10 +22,19 @@ class ViewController: NSViewController {
         return viewcontroller
     }
     
+    
     @IBAction func onEnter(_ sender: NSTextField) {
         let parsed = Int(sender.stringValue) ?? 0;
         timer.start(durationInMinutes: parsed)
+        
+        // clear and close
         sender.stringValue = ""
+        closeDelegate?.closePopover()
     }
+}
+
+
+protocol PopoverDelegate: class {
+    func closePopover()
 }
 

@@ -8,10 +8,8 @@
 import Cocoa
 
 @main
-class AppDelegate: NSObject, NSApplicationDelegate, TimerDelegate {
+class AppDelegate: NSObject, NSApplicationDelegate, TimerDelegate, PopoverDelegate{
 
-
-    
     let statusItem = NSStatusBar.system.statusItem(withLength:NSStatusItem.squareLength)
     let popover = NSPopover()
     
@@ -23,8 +21,12 @@ class AppDelegate: NSObject, NSApplicationDelegate, TimerDelegate {
             button.action = #selector(AppDelegate.togglePopover(_:))
         }
         
-        self.popover.contentViewController = ViewController.newInstance()
+        let controller = ViewController.newInstance();
+        controller.closeDelegate = self
+        self.popover.contentViewController = controller
         self.popover.animates = false
+        
+        TimerService.global.delegate = self
     }
     
     @objc func togglePopover(_ sender: NSStatusItem) {
@@ -40,7 +42,6 @@ class AppDelegate: NSObject, NSApplicationDelegate, TimerDelegate {
     
     
     func timerTick(remainingTime: Int) {
-        print("tick")
         print(remainingTime)
         if let button = self.statusItem.button {
             button.title = "\(remainingTime)"
@@ -48,12 +49,13 @@ class AppDelegate: NSObject, NSApplicationDelegate, TimerDelegate {
     }
     
     func timerDone() {
-        print("done")
         if let button = self.statusItem.button {
             button.title = "L"
         }
     }
-
     
+    func closePopover(){
+        togglePopover(statusItem);
+    }
 
 }
