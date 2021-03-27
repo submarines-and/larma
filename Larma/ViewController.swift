@@ -31,6 +31,13 @@ class ViewController: NSViewController {
         sender.stringValue = ""
         closeDelegate?.closePopover()
     }
+    
+    
+    @IBAction func onQuitButtonClick(_ sender: Any) {
+        NSApplication.shared.terminate(self)
+    }
+    
+    
 }
 
 

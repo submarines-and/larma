@@ -38,7 +38,7 @@ class TimerService {
     func done(){
         delegate?.timerDone()
         
-        let center = UNUserNotificationCenter.current()
+        print("sending notification");
         
         let content = UNMutableNotificationContent()
         content.title = "Your time is up!"
@@ -53,9 +53,9 @@ class TimerService {
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
         */
         
-        
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: nil)
-        center.add(request)
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+        print("Sent");
     }
     
     
