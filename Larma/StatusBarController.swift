@@ -18,7 +18,8 @@ class StatusBarController {
         statusItem = statusBar.statusItem(withLength: NSStatusItem.variableLength)
 
         if let statusBarButton = statusItem.button {
-            statusBarButton.title = "MinimalMenuBarApp"
+            statusBarButton.title = "L"
+          //  statusBarButton.image =  NSImage(named:"Icon.png")
             let menuItem = NSMenuItem()
             menuItem.view = mainView
             let menu = NSMenu()

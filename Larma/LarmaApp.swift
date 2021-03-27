@@ -12,6 +12,8 @@ import SwiftUI
 struct LarmaApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     var body: some Scene {
+        
+        // cant remove this, need something
           Settings {
               EmptyView()
           }
@@ -21,14 +23,16 @@ struct LarmaApp: App {
 class AppDelegate: NSObject, NSApplicationDelegate {
     var statusBar: StatusBarController?
 
+    // on start
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        let contentView = ContentView()
+        let contentView = MainWindow()
         let mainView = NSHostingView(rootView: contentView)
         mainView.frame =  NSRect(x: 0, y: 0, width: 200, height: 200)
         statusBar = StatusBarController(mainView)
     }
 
+    // on close
     func applicationWillTerminate(_ aNotification: Notification) {
-        // Insert code here to tear down your application
+        print("Close")
     }
 }
