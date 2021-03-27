@@ -8,19 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		9C92C7E0260F82E800BA411A /* LarmaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C92C7DF260F82E800BA411A /* LarmaApp.swift */; };
-		9C92C7E2260F82E800BA411A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C92C7E1260F82E800BA411A /* ContentView.swift */; };
 		9C92C7E4260F82E900BA411A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C92C7E3260F82E900BA411A /* Assets.xcassets */; };
 		9C92C7E7260F82E900BA411A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C92C7E6260F82E900BA411A /* Preview Assets.xcassets */; };
+		9C92C7F6260F89D600BA411A /* StatusBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C92C7F5260F89D600BA411A /* StatusBarController.swift */; };
+		9C92C7F9260F89FF00BA411A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C92C7F8260F89FF00BA411A /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9C92C7DC260F82E800BA411A /* Larma.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Larma.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C92C7DF260F82E800BA411A /* LarmaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LarmaApp.swift; sourceTree = "<group>"; };
-		9C92C7E1260F82E800BA411A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9C92C7E3260F82E900BA411A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9C92C7E6260F82E900BA411A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9C92C7E8260F82E900BA411A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C92C7E9260F82E900BA411A /* Larma.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Larma.entitlements; sourceTree = "<group>"; };
+		9C92C7F5260F89D600BA411A /* StatusBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarController.swift; sourceTree = "<group>"; };
+		9C92C7F8260F89FF00BA411A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,11 +55,12 @@
 		9C92C7DE260F82E800BA411A /* Larma */ = {
 			isa = PBXGroup;
 			children = (
-				9C92C7DF260F82E800BA411A /* LarmaApp.swift */,
-				9C92C7E1260F82E800BA411A /* ContentView.swift */,
-				9C92C7E3260F82E900BA411A /* Assets.xcassets */,
-				9C92C7E8260F82E900BA411A /* Info.plist */,
 				9C92C7E9260F82E900BA411A /* Larma.entitlements */,
+				9C92C7E8260F82E900BA411A /* Info.plist */,
+				9C92C7F8260F89FF00BA411A /* ContentView.swift */,
+				9C92C7DF260F82E800BA411A /* LarmaApp.swift */,
+				9C92C7F5260F89D600BA411A /* StatusBarController.swift */,
+				9C92C7E3260F82E900BA411A /* Assets.xcassets */,
 				9C92C7E5260F82E900BA411A /* Preview Content */,
 			);
 			path = Larma;
@@ -140,8 +143,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C92C7E2260F82E800BA411A /* ContentView.swift in Sources */,
 				9C92C7E0260F82E800BA411A /* LarmaApp.swift in Sources */,
+				9C92C7F6260F89D600BA411A /* StatusBarController.swift in Sources */,
+				9C92C7F9260F89FF00BA411A /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
