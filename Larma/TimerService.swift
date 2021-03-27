@@ -5,6 +5,7 @@
 //  Created by Johannes Sörensen on 2021-03-27.
 //
 import Cocoa
+import UserNotifications
 
 class TimerService {
     
@@ -37,16 +38,41 @@ class TimerService {
     func done(){
         delegate?.timerDone()
         
-        let notification = NSUserNotification()
-        notification.title = "Your time is up!"
-        notification.soundName = NSUserNotificationDefaultSoundName
-        NSUserNotificationCenter.default.scheduleNotification(notification)
+        let center = UNUserNotificationCenter.current()
+        
+        let content = UNMutableNotificationContent()
+        content.title = "Your time is up!"
+        content.categoryIdentifier = "larma"
+        content.sound = UNNotificationSound.default
+        
+        /*
+         Maybe I can just use this for scheduling instead?
+        var dateComponents = DateComponents()
+        dateComponents.hour = 10
+        dateComponents.minute = 30
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+        */
+        
+        
+        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: nil)
+        center.add(request)
     }
     
     
     // shared global reference :)
     static var global = TimerService()
     private init() {
+        
+        let center = UNUserNotificationCenter.current()
+        
+        center.requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
+            if granted {
+                print("Ok")
+            }
+            else {
+                print("No")
+            }
+        }
         
     }
 }
