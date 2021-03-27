@@ -36,12 +36,19 @@ class TimerService {
     
     func done(){
         delegate?.timerDone()
+        
+        let notification = NSUserNotification()
+        notification.title = "Your time is up!"
+        notification.soundName = NSUserNotificationDefaultSoundName
+        NSUserNotificationCenter.default.scheduleNotification(notification)
     }
     
     
     // shared global reference :)
     static var global = TimerService()
-    private init() {}
+    private init() {
+        
+    }
 }
 
 
