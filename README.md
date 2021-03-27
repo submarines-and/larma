@@ -1,11 +1,12 @@
 #  Larma
-There is no way I am paying $5 for a timer app, so I wrote my own. It lives in your menu bar and saves you having to go to google each time.
+There is no way I am paying $5 for a timer app, so I wrote my own. It lives in your menu bar and saves you having to go to google each time. In the same spirit, I am not publishing this app anywhere, but you can easily build and run it yourself through xcode.
 
-I am running it through XCODE currently, I will write instructions on how to sign it  when I get to that part myself.
+
 
 ## Usage
-1) Start app
-2) Click icon
-3) Enter duration, press enter
-4) You will be notified when time is up.
+1) Open project with xcode
+2) Build project
+3) Click `Products` in your file browser, select "Larma.app", right click-> show in finder
+4) Copy that file to your `Applications` directory
+5) (Optiona) Go to  `Users & Groups` under system preferences and add as a startup app.
 
