@@ -21,14 +21,15 @@ struct LarmaApp: App {
 }
 
 class AppDelegate: NSObject, NSApplicationDelegate {
+    var popover = NSPopover.init()
     var statusBar: StatusBarController?
 
     // on start
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         let contentView = MainWindow()
-        let mainView = NSHostingView(rootView: contentView)
-        mainView.frame =  NSRect(x: 0, y: 0, width: 200, height: 200)
-        statusBar = StatusBarController(mainView)
+        popover.contentSize = NSSize(width: 360, height: 360)
+        popover.contentViewController = NSHostingController(rootView: contentView)
+        statusBar = StatusBarController.init(popover)
     }
 
     // on close
