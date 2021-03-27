@@ -23,8 +23,9 @@ class ViewController: NSViewController {
     }
     
     @IBAction func onEnter(_ sender: NSTextField) {
-        let parsed = Double(sender.stringValue) ?? 0;
-        timer.start(duration: parsed)
+        let parsed = Int(sender.stringValue) ?? 0;
+        timer.start(durationInMinutes: parsed)
+        sender.stringValue = ""
     }
 }
 

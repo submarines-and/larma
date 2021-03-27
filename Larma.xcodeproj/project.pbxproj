@@ -23,6 +23,7 @@
 		9CAB7A82260FA79700431403 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9CAB7A83260FA79700431403 /* Larma.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Larma.entitlements; sourceTree = "<group>"; };
 		9CAB7A8E260FB23E00431403 /* TimerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerService.swift; sourceTree = "<group>"; };
+		9CAB7A92260FB55400431403 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +40,7 @@
 		9CAB7A6D260FA79700431403 = {
 			isa = PBXGroup;
 			children = (
+				9CAB7A92260FB55400431403 /* README.md */,
 				9CAB7A78260FA79700431403 /* Larma */,
 				9CAB7A77260FA79700431403 /* Products */,
 			);

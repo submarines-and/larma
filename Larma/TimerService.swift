@@ -8,21 +8,44 @@ import Cocoa
 
 class TimerService {
     
-    static var global = TimerService()
+    var delegate:TimerDelegate?
+    var timer = Timer()
+    var target = 0
     
-    func start(durationInMinutes: Double) {
- 
+    func start(durationInMinutes: Int) {
+        timer.invalidate() // just in case this button is tapped multiple times
+        
         // convert input value to minutes
-        let duration = durationInMinutes * 60
-   
-        Timer.scheduledTimer(timeInterval: duration, target: self, selector: #selector(done), userInfo: nil, repeats: false)
+        target = durationInMinutes * 60
+        
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(tick), userInfo: nil, repeats: true)
     }
     
     
-    @objc func done()
-    {
-        print("Done")
+    @objc func tick(){
+        target -= 1
+        
+        if(target == 0){
+            timer.invalidate()
+            done()
+        }
+        else{
+            delegate?.timerTick(remainingTime: target)
+        }
     }
+    
+    func done(){
+        delegate?.timerDone()
+    }
+    
+    
+    // shared global reference :)
+    static var global = TimerService()
     
 }
 
+
+protocol TimerDelegate {
+    func timerTick(remainingTime: Int)
+    func timerDone()
+}
