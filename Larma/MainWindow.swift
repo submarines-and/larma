@@ -6,24 +6,20 @@
 //
 
 import SwiftUI
-import AppKit
 
 struct MainWindow: View {
-    @State private var username: String = ""
+    @State private var duration: String = ""
     
     var body: some View {
         VStack {
             
-            TextField("Alarm...", text: $username, onEditingChanged: { (changed) in
-                print("Username onEditingChanged - \(changed)")
-            }) {
-                print("Username onCommit")
-            }
+            TextField("Minutes", text: $duration, onCommit: {
+                print(duration)
+                duration = ""
+            })
             .disableAutocorrection(true)
             
-            Button("Quit", action: {
-                NSApplication.shared.terminate(self)
-            })
+            Button("Quit", action: { NSApplication.shared.terminate(self) })
         }
         .padding()
     }

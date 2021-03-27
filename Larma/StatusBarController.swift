@@ -16,13 +16,13 @@ class StatusBarController {
     init(_ popover: NSPopover) {
         self.popover = popover
         statusBar = NSStatusBar.init()
-        // Creating a status bar item having a fixed length
         statusItem = statusBar.statusItem(withLength: 28.0)
         
         if let statusBarButton = statusItem.button {
             //  statusBarButton.image = #imageLiteral(resourceName: "StatusBarIcon")
             //  statusBarButton.image?.size = NSSize(width: 18.0, height: 18.0)
             //  statusBarButton.image?.isTemplate = true
+            
             statusBarButton.title = "L"
             statusBarButton.action = #selector(togglePopover(sender:))
             statusBarButton.target = self
