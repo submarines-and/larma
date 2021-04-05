@@ -10,7 +10,7 @@ import Cocoa
 @main
 class AppDelegate: NSObject, NSApplicationDelegate, TimerDelegate, PopoverDelegate{
 
-    let statusItem = NSStatusBar.system.statusItem(withLength:NSStatusItem.squareLength)
+    let statusItem = NSStatusBar.system.statusItem(withLength:NSStatusItem.variableLength)
     let popover = NSPopover()
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
