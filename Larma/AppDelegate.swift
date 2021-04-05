@@ -43,8 +43,12 @@ class AppDelegate: NSObject, NSApplicationDelegate, TimerDelegate, PopoverDelega
     
     func timerTick(remainingTime: Int) {
         print(remainingTime)
+        
+        let mintuesLeft = remainingTime / 60;
+        let secondsLeft = remainingTime % 60;
+        
         if let button = self.statusItem.button {
-            button.title = "\(remainingTime)"
+            button.title = "\(mintuesLeft):\(secondsLeft)"
         }
     }
     
