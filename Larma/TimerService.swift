@@ -2,7 +2,7 @@
 //  Timer.swift
 //  Larma
 //
-//  Created by Johannes Sörensen on 2021-03-27.
+//  Created by submarines on 2021-03-27.
 //
 import Cocoa
 import UserNotifications
